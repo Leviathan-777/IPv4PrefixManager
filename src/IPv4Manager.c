@@ -26,12 +26,9 @@ TrieNode *create_node()
 {
     TrieNode *node = (TrieNode *)malloc(sizeof(TrieNode));
 
-    if (node)
-    {
-        node->children[0] = NULL; 
-        node->children[1] = NULL;
-        node->mask = -1;
-    }
+    node->children[0] = NULL; 
+    node->children[1] = NULL;
+    node->mask = -1;
 
     return node;
 }
