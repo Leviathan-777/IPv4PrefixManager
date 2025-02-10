@@ -74,7 +74,7 @@ void free_tree(TrieNode *node)
  *
  * Zwraca: 
  *      -1 - podane paramerty były błędne i operacja się nie powiodła,
- *      0  - prefiks już istnieję w zbiorze,
+ *      0  - prefiks już istnieje w zbiorze,
  *      1  - operacja dodawania nowego prefiksu się powiodła,
 */
 int add(TrieNode *root, unsigned int base, char mask) 
@@ -206,7 +206,7 @@ void test()
 
     /* Test funkcji add */
     printf("Dodaj 10.20.0.0/16: %d\n",                                      add(root, 0x0A140000, 16)); /* Powinno zwrócić 1 */
-    printf("Dodaj 10.20.0.0/16 (Dodanie juz istniejacego prefiksu): %d\n",  add(root, 0x0A140000, 16)); /* Powinno zwrócić 0, dodanie istniejacego prefiksu */
+    printf("Dodaj 10.20.0.0/16 (Dodanie juz istniejacego prefiksu): %d\n",  add(root, 0x0A140000, 16)); /* Powinno zwrócić 0, dodanie istniejącego prefiksu */
     printf("Dodaj 80.64.128.0/20: %d\n",                                    add(root, 0x50408000, 20)); /* Powinno zwrócić 1 */
     printf("Dodaj 32.40.2.3/24: %d\n",                                      add(root, 0x1E280203, 24)); /* Powinno zwrócić 1 */
     printf("Dodaj 192.168.0.1/33 (niepoprawna maska): %d\n\n",              add(root, 0xC0A80001, 33)); /* Powinno zwrócić -1, niepoprawna maska */
